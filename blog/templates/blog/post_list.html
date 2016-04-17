@@ -3,14 +3,16 @@
         <title>Chiara's blog</title>
     </head>
      <body>
-     	<div>
+     	 <div>
      		  <h1><a href="">Chiara's Blog</a></h1>
      		  <h2>...sono davvero una bibliotecaria</h2>
      	</div>
+ 		{% for post in posts %}
 		  <div>
-            <p>published: 17.04.2016, 12:14</p>
-            <h2><a href="">Primi passi con Django</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>     
+            <p>published: {{ post.published_date }}</p>
+            <h2><a>{{ post.title }}</a></h2>
+            <p>{{ post.text }}</p>
+            </div>
+        {% endfor %} 
      </body>
 </html>
